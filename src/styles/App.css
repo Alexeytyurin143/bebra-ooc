@@ -1,0 +1,18 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.navbar {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    justify-content: space-between;
+    background: lightgray;
+}
+/* 
+.login img{
+    display: block;
+} */
