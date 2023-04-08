@@ -1,0 +1,26 @@
+.Header {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    justify-content: space-between;
+    background-color: #d9d9d9;
+}
+
+.NavBody {
+    color: teal;
+}
+
+.NavBody a {
+    text-decoration: none;
+}
+
+.NavList {
+    display: flex;
+    gap: 10px;
+}
+
+.Avatar {
+    border-radius: 50%;
+    display: block;
+}

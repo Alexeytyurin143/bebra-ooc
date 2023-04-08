@@ -2,15 +2,30 @@
 *::before,
 *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.navbar {
-    height: 80px;
+ul, ol, li {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+}
+
+.accordion {
+    width: 800px;
+}
+
+.container {
+    padding-top: 30px;
+    margin: 0 auto;
+    max-width: 1200px;
     display: flex;
+    gap: 30px;
+    flex-direction: column;
     align-items: center;
-    padding: 0 15px;
-    justify-content: space-between;
-    background: lightgray;
 }
 /* 
 .login img{
