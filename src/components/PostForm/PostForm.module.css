@@ -1,0 +1,9 @@
+.PostForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.PostForm button {
+    align-self: self-start;
+}

@@ -1,8 +1,8 @@
 .UIBtn {
-    padding: 55px 165px;
+    padding: 10px 25px;
     color: teal;
-    font-size: 48px;
+    font-size: 18px;
     background: transparent;
-    border: 5px solid teal;
+    border: 3px solid teal;
     cursor: pointer;
 }
