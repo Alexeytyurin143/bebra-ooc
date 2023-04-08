@@ -17,12 +17,12 @@ const AccordionItem = ({ post, active, multiple, onToggle }) => {
     return (
         <div className={isActive() ? `${cl.card} ${cl.accordionActive}` : `${cl.card}`}>
             <div className={cl.cardHeader} onClick={toogleVisiblity}>
-                {post.id}. {post.title}
+                {post.id}. {post.username}
                 <span className={cl.accordionIcon}>
                     {isActive() ? '-' : '+'}
                 </span>
             </div>
-            <div className={cl.cardBody}>{post.body}</div>
+            <div className={cl.cardBody}>{post.password}</div>
         </div>
     )
 }
