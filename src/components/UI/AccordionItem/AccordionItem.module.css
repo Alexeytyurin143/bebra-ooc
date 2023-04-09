@@ -2,6 +2,16 @@
     transition: all 0.3s;
 }
 
+.EditForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.EditForm button {
+    align-self: self-start;
+}
+
 .openIconActive {
     transform: rotate(180deg);
     z-index: 1;

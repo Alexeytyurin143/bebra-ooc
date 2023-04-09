@@ -15,7 +15,6 @@ function App() {
 
   const [posts, setPosts] = useState([]);
   const [popup, setPopup] = useState(false);
-  const [filterer, setFilterer] = useState('');
 
   const removePost = (post) => {
     setPosts(posts.filter(p => p.id !== post.id))
@@ -26,12 +25,6 @@ function App() {
     setPosts(response.data)
   }
 
-  function createPost(newPost) {
-    // await axios.post('https://jsonplaceholder.typicode.com/posts', setPosts(newPost))
-    // .then(response => console.log(response))
-    setPosts([...posts, newPost])
-  }
-
   useEffect(() => {
     fetchPosts()
   }, [])
@@ -40,19 +33,17 @@ function App() {
     removePost()
   }, [])
 
-
   // const sortedAndSearchedPosts = usePosts(posts, filterer.sort, filterer.query);
 
-  const onFilterChange = e => setFilterer(e.target.value);
 
 
-  // https://jsonplaceholder.typicode.com/posts
   // http://localhost:8080/buildingObject
-  
+  // http://localhost:8080/buildingObject
 
 
 
-  const filteredPosts = posts.filter(n => ((!filterer || n.filterer === filterer)));
+
+  // const filteredPosts = posts.filter(post => post.title.includes());
 
 
   return (
@@ -61,14 +52,8 @@ function App() {
       <div className="container">
         <div className="btn"><UIButton onClick={() => setPopup(true)}>Добавить объект</UIButton></div>
         <Popup visible={popup} setVisible={setPopup}>
-          <PostForm create={createPost} />
+          <PostForm />
         </Popup>
-        <UISelect
-          value={filterer}
-          onChange={onFilterChange}
-          defaultOption="Тип"
-          posts={posts}
-        />
         <div className="accordion">
           <Accordion remove={removePost} posts={posts} multiple={true} />
           {/*  */}

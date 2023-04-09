@@ -5,7 +5,7 @@ import cl from './PostForm.module.css'
 import axios from "axios";
 
 
-const PostForm = ({ create }) => {
+const PostForm = ({}) => {
     const [post, setPost] = useState({
         county: '',
         area: '',
@@ -17,31 +17,11 @@ const PostForm = ({ create }) => {
         actualUser: '',
     });
 
-    async function handleSubmit(e) {
-        await axios.post('http://localhost:8080/buildingObject', { ...post })
-            .then(response => console.log(response))
-            .catch(err => console.log(err))
-    }
-
-    const addNewPost = (e) => {
-        const newPost = { ...post }
-        create(newPost)
-        handleSubmit()
-        setPost({
-            county: '',
-            area: '',
-            address: '',
-            buildingObjectType: '',
-            buildingObjectState: '',
-            buildingObjectSquare: '',
-            owner: '',
-            actualUser: '',
-        })
+    const addNewPost = async () => {
+        await axios.post('http://localhost:8080/buildingObject', post)
     }
 
 
-    // https://jsonplaceholder.typicode.com/posts
-    // http://localhost:8080/buildingObject
     return (
         <form className={cl.PostForm}>
             <UIInput

@@ -24,3 +24,66 @@
     border-radius: 50%;
     display: block;
 }
+
+.body {
+    display: flex;
+    gap: 30px;
+    width: 1200px;
+    
+}
+
+.bodyColumn {
+    display: flex;
+    gap: 30px;
+    width: 900px;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.row select {
+    max-width: 200px;
+}
+
+.column input {
+    width: auto;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.column button {
+    align-self: flex-start;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.list {
+    flex-grow: 1;
+}
+
+.Popup2Info {
+    display: flex;
+    gap: 100px;
+}
+
+.Popup2Inputs {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.Popup2Buttons {
+    display: flex;
+    justify-content: space-between;
+}

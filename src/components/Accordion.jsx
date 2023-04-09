@@ -4,8 +4,6 @@ import AccordionItem from "./UI/AccordionItem/AccordionItem";
 const Accordion = ({ remove, posts, multiple = false }) => {
   const [active, setActive] = useState(0);
 
-  
-
   return (
     <div>
       {posts.map((post, index) =>
