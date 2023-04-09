@@ -14,22 +14,29 @@ const AccordionItem = (props) => {
         props.onToggle();
     };
 
-    async function deleteRecord(id) {
-        await axios.delete(`http://localhost:8080/buildingObject/${id}`)
+    const handleDelete = (deletedID) => {
+        axios.delete(`http://localhost:8080/buildingObject/${deletedID}`)
+            .then(res => {
+                console.log("deleted record", res.data)
+            })
+            .catch(err => console.log(err))
+        
     }
+    // https://jsonplaceholder.typicode.com/posts
+    // http://localhost:8080/buildingObject
 
     return (
         <div className={isActive() ? `${cl.card} ${cl.accordionActive}` : `${cl.card}`}>
             <div className={cl.cardHeader} onClick={toogleVisiblity}>
-                {props.number}.
-                 Округ: {props.post.county}, Район: {props.post.area}, Адрес: {props.post.address}
+                {props.post.id}. {props.post.title}
+                Округ: {props.post.county}, Район: {props.post.area}, Адрес: {props.post.address}
                 <div className={cl.Icons}>
                     <button>
                         <FontAwesomeIcon icon={faPen} />
                     </button>
                     <button onClick={() => {
-                        props.remove(props.post);
-                        deleteRecord(props.post.id)
+                        handleDelete(props.post.id)
+                        props.remove(props.post)
                     }}>
                         <FontAwesomeIcon icon={faTrash} />
                     </button>

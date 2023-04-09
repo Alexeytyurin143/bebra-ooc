@@ -17,14 +17,16 @@ const PostForm = ({ create }) => {
         actualUser: '',
     });
 
+    async function handleSubmit(e) {
+        await axios.post('http://localhost:8080/buildingObject', { ...post })
+            .then(response => console.log(response))
+            .catch(err => console.log(err))
+    }
+
     const addNewPost = (e) => {
-        e.preventDefault();
-        handleSubmit()
-        const newPost = {
-            ...post,
-            id: Date.now()
-        }
+        const newPost = { ...post }
         create(newPost)
+        handleSubmit()
         setPost({
             county: '',
             area: '',
@@ -37,11 +39,7 @@ const PostForm = ({ create }) => {
         })
     }
 
-    async function handleSubmit(e) {
-        await axios.post('http://localhost:8080/buildingObject', { ...post })
-            .then(response => console.log(response))
-            .catch(err => console.log(err))
-    }
+
     // https://jsonplaceholder.typicode.com/posts
     // http://localhost:8080/buildingObject
     return (
@@ -51,6 +49,7 @@ const PostForm = ({ create }) => {
                 onChange={e => setPost({ ...post, county: e.target.value })}
                 type="text"
                 placeholder="Округ"
+
             />
             <UIInput
                 value={post.area}

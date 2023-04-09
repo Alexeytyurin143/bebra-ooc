@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import AccordionItem from "./UI/AccordionItem/AccordionItem";
-
+// 
 const Accordion = ({ remove, posts, multiple = false }) => {
   const [active, setActive] = useState(0);
 
@@ -16,6 +16,7 @@ const Accordion = ({ remove, posts, multiple = false }) => {
           remove={remove}
           active={active === post.id}
           multiple={multiple}
+          id={post.id}
           onToggle={(e) => setActive((a) => (a === post.id ? "" : post.id))} 
           />
       )}
