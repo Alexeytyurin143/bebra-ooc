@@ -5,8 +5,8 @@ import dayjs from 'dayjs';
 
 const EventCalendar = () => {
     const { token } = theme.useToken();
-    const [value, setValue] = useState(() => dayjs('2017-01-25'));
-    const [selectedValue, setSelectedValue] = useState(() => dayjs('2017-01-25'));
+    const [value, setValue] = useState(() => dayjs('2023-04-15'));
+    const [selectedValue, setSelectedValue] = useState(() => dayjs('2023-04-15'));
     const onSelect = (newValue) => {
         setValue(newValue);
         setSelectedValue(newValue);

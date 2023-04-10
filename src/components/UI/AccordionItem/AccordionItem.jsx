@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import cl from "./AccordionItem.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPen, faTrash, faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import axios from "axios";
 import Popup from "../Popup/Popup";
-// import EditForm from "../../EditFrom/EditForm";
-import { useParams } from "react-router-dom";
 import UIButton from "../UIButton/UIButton";
 import UIInput from "../UIInput/UIInput";
 
@@ -40,21 +38,6 @@ const AccordionItem = (props) => {
             .catch(err => console.log(err))
     }
 
-    // async function getFormData(id) {
-    //     await axios.get(`http://localhost:8080/buildingObject/${id}`)
-    //         .then(response => console.log(response))
-    //         .catch(err => console.log(err))
-    // }
-
-
-    // async function handleSubmit() {
-    //     await axios.put('http://localhost:8080/buildingObject', { ...post })
-    //         .then(response => console.log(response))
-    //         .catch(err => console.log(err))
-    // }
-
-
-
     const loadObject = async () => {
         const result = await axios.get(`http://localhost:8080/buildingObject/${props.post.id}`)
         setPost(result.data)
@@ -65,25 +48,6 @@ const AccordionItem = (props) => {
         console.log(result)
     }
 
-
-
-    // const editPost = (e) => {
-    //     axios.put(`http://localhost:8080/buildingObject/${editedID}`)
-    //         .then(res => {
-    //             console.log("edited record", res.data)
-    //         })
-    //         .catch(err => console.log(err))
-    // }
-
-
-    // function createPost(newPost) {
-    //     // await axios.post('http://localhost:8080/buildingObject', setPosts(newPost))
-    //     // .then(response => console.log(response))
-    //     setPosts([...posts, newPost])
-    // }
-
-    // http://localhost:8080/buildingObject
-    // http://localhost:8080/buildingObject
 
     return (
         <div className={isActive() ? `${cl.card} ${cl.accordionActive}` : `${cl.card}`}>
@@ -109,7 +73,6 @@ const AccordionItem = (props) => {
                         <FontAwesomeIcon icon={faChevronDown} />
                     </span>
                 </div>
-
             </div>
             <div className={cl.cardBody}>
                 <p>Тип объекта: {props.post.buildingObjectType}</p>

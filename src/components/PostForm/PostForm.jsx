@@ -5,7 +5,7 @@ import cl from './PostForm.module.css'
 import axios from "axios";
 
 
-const PostForm = ({}) => {
+const PostForm = () => {
     const [post, setPost] = useState({
         county: '',
         area: '',

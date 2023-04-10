@@ -22,13 +22,6 @@ const Navbar = () => {
         const response = await axios.get('http://localhost:8080/buildingObject')
         setPosts(response.data)
     }
-    // http://localhost:8080/buildingObject
-    // http://localhost:8080/buildingObject
-    async function createPost(newPost) {
-        // await axios.post('http://localhost:8080/buildingObject', setPosts(newPost))
-        // .then(response => console.log(response))
-        setPosts([...posts, newPost])
-    }
 
 
     return (
