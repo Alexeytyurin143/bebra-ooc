@@ -8,6 +8,7 @@ import UIInput from "../UIInput/UIInput";
 import UIButton from "../UIButton/UIButton";
 
 const Navbar = () => {
+    
     useEffect(() => {
         fetchPosts()
     }, [])
@@ -18,6 +19,7 @@ const Navbar = () => {
         setPosts(posts.filter(p => p.id !== post.id))
     }
     const [posts, setPosts] = useState([]);
+
     async function fetchPosts() {
         const response = await axios.get('http://localhost:8080/buildingObject')
         setPosts(response.data)

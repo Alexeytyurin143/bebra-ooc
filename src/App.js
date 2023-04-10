@@ -9,6 +9,10 @@ import PostForm from "./components/PostForm/PostForm";
 
 function App() {
 
+  useEffect(() => {
+    fetchPosts()
+  }, [])
+
   const [posts, setPosts] = useState([]);
   const [popup, setPopup] = useState(false);
 
@@ -20,14 +24,6 @@ function App() {
     const response = await axios.get('http://localhost:8080/buildingObject')
     setPosts(response.data)
   }
-
-  useEffect(() => {
-    fetchPosts()
-  }, [])
-
-  useEffect(() => {
-    removePost()
-  })
 
 
   return (
